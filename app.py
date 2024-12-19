@@ -57,6 +57,28 @@ def pipeline_status():
 
     result = fetch_pipeline_stage_statuses(PROJECT_ID, pipeline_id, ACCESS_TOKEN)
     return jsonify(result)
+@app.route('/favicon.ico')
+def favicon():
+    return '', 204  # No Content
+
+@app.route("/test-icons")
+def test_icons():
+    return '''
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Bootstrap Icons Test</title>
+        <link rel="stylesheet" href="/static/css/bootstrap-icons.min.css">
+    </head>
+    <body>
+        <h1>Bootstrap Icons Test</h1>
+        <i class="bi bi-alarm"></i> Alarm Icon
+        <i class="bi bi-check-circle"></i> Check Circle
+    </body>
+    </html>
+    '''
+
 
 if __name__ == "__main__":
     app.run(port=8080, debug=True)

@@ -16,4 +16,5 @@ instance/
 *.db
 *.sqlite3
 
+.DS_Store
 notes.txt
